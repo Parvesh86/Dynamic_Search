@@ -1,0 +1,29 @@
+$(document).ready(function(){
+    $('#SearchField').on('keyup',function(){
+        console.log($(this).val())
+        if($(this).val()!=''){
+            $.ajax({
+                url:AJAXURL('/search/'),
+                method:'GET',
+                data:{searchData:$(this).val()},
+                success:function(response){
+                    console.log(response)
+                    if(response){
+                        $('#SerachResults').show();
+                        $('#SerachResults').empty();
+                        $.each(response,function(index,value){
+                            let returnData = "<li>"+value.Name+"</li>"
+                            $('#SerachResults').append(returnData)
+                        })
+                    }
+                },
+                error:function(response){
+                    console.log(response)
+                }
+            })
+        }else{
+            $('#SerachResults').hide(); 
+            $('#SerachResults').empty();
+        }
+    })
+})

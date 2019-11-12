@@ -1,0 +1,13 @@
+div#SerachResultsOuter {
+    position: relative;
+    /* display: none; */
+}
+
+ul#SerachResults {
+    position: absolute;
+    width: 100%;
+    background: black;
+    color: white;
+    list-style: none;
+    display: none;
+}
