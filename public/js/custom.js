@@ -12,7 +12,7 @@ $(document).ready(function(){
                         $('#SerachResults').show();
                         $('#SerachResults').empty();
                         $.each(response,function(index,value){
-                            let returnData = "<li>"+value.Name+"</li>"
+                            let returnData = "<li><a href='javascript:void(0)'>"+value.Name+"</a></li>"
                             $('#SerachResults').append(returnData)
                         })
                     }
